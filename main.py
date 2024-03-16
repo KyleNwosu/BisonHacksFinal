@@ -9,6 +9,11 @@ from llama_index.core.agent import ReActAgent
 from llama_index.llms.openai import OpenAI
 from pdf import path_engine
 
+from flask import Flask, jsonify, request
+import random
+from flask_cors import CORS
+
+
 
 load_dotenv()
 
@@ -31,6 +36,31 @@ tools = [
 llm = OpenAI(model="gpt-3.5-turbo")
 agent = ReActAgent.from_tools(tools, llm=llm, verbose=True, context=context)
 
-while (prompt := input("Enter a prompt: ")) != "exit":
-    result = agent.query(prompt)
-    print(result)
+# while (prompt := input("Enter a prompt: ")) != "exit":
+#     result = agent.query(prompt)
+#     print(result)
+
+
+app = Flask(__name__)
+CORS(app)
+@app.route('/prompt', methods=['GET'])
+def prompt():
+    try:
+        # Get the query parameter from the URL
+        query = request.args.get('query')
+        
+        # Generate a random 3-digit number
+        random_number = random.randint(100, 999)
+        
+        # Construct the response dictionary
+        response = {
+            'response': agent.query(query)
+        }
+        
+        return jsonify(response)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True)
+

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "314833789537",
+    "project_id": "bisonhacks-chatbot-3083e",
+    "storage_bucket": "bisonhacks-chatbot-3083e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314833789537:android:23d67b5f7cc79df1310020",
+        "android_client_info": {
+          "package_name": "com.example.chatbot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiPYB3wQF8Bui8G_UomVItSxqm-M4rlrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
