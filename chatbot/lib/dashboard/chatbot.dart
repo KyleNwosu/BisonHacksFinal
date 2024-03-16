@@ -48,7 +48,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
         thinking = true;
       });
       String url =
-          'https://localhost/api?query=${message.message}';
+          'http://127.0.0.1:5000/prompt?query=${message.message}';
       var decodedData;
       try {
         String data = await getData(url);
