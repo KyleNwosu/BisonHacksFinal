@@ -48,7 +48,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
         thinking = true;
       });
       String url =
-          'https://07f8-2601-152-b01-1550-f801-8bd1-8ea4-81ed.ngrok-free.app/api?Query=${message.message}';
+          'https://localhost/api?query=${message.message}';
       var decodedData;
       try {
         String data = await getData(url);

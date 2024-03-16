@@ -43,6 +43,10 @@ agent = ReActAgent.from_tools(tools, llm=llm, verbose=True, context=context)
 
 app = Flask(__name__)
 CORS(app)
+@app.route('/', methods=['GET'])
+def home():
+    return "Welcome to the home page!"
+
 @app.route('/prompt', methods=['GET'])
 def prompt():
     try:
