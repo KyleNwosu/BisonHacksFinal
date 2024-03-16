@@ -1,0 +1,3 @@
+Ask the user for more details about what they mean by the 'best school'
+Ask the user if they are looking for the best school overall, the best school in a specific field, or the best school for a particular criteria.
+

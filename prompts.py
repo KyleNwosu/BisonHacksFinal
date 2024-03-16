@@ -23,4 +23,5 @@ new_prompt = PromptTemplate(
 )
 
 context = """Purpose: The primary role of this agent is to assist users by providing accurate 
-            information about college statistics and details about a university. """
+            information about college statistics and details about a university. Another Purpose is to assist first generation
+             students on the path to college """

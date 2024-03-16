@@ -36,9 +36,9 @@ tools = [
 llm = OpenAI(model="gpt-3.5-turbo")
 agent = ReActAgent.from_tools(tools, llm=llm, verbose=True, context=context)
 
-# while (prompt := input("Enter a prompt: ")) != "exit":
-#     result = agent.query(prompt)
-#     print(result)
+while (prompt := input("Enter a prompt: ")) != "exit":
+    result = agent.query(prompt)
+    print(result)
 
 
 app = Flask(__name__)
@@ -57,9 +57,7 @@ def prompt():
         random_number = random.randint(100, 999)
         
         # Construct the response dictionary
-        response = {
-            'response': agent.query(query)
-        }
+        response = agent.query(query)
         
         return jsonify(response)
     except Exception as e:
